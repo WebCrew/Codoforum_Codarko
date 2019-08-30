@@ -216,10 +216,10 @@
                 </div>
                 <div class="codo_user_details">
 
-                    <div style="color:#9f9f9f;"> {_t("Joined :")} <span style="float:right;color:#3e3e3e;font-weight:bold">{$user->created|get_pretty_time}</span>
+                    <div style="color:#9f9f9f;"> {_t("Joined :")} <span style="float:right;color:#c5bba7;font-weight:bold">{$user->created|get_pretty_time}</span>
                     </div>
                     <div style="color:#9f9f9f;">
-                        {_t("Last login :")} <span style="float:right;color:#3e3e3e;font-weight:bold">{if $user->last_access eq 0}{_t('never')}{else}{$user->last_access|get_pretty_time}{/if}</span>
+                        {_t("Last login :")} <span style="float:right;color:#c5bba7;font-weight:bold">{if $user->last_access eq 0}{_t('never')}{else}{$user->last_access|get_pretty_time}{/if}</span>
                     </div>
                     {foreach from=$custom_fields item=field}
 
