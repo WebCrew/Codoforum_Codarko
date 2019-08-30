@@ -29,6 +29,7 @@
 ### Install
 - Extract the archive and upload it with ileZilla (FTP) to sites/default/themes/
 - activate the theme from CODOforum admin backend
+- do NOT upload the "Extras" folder. It includes some Category Icons and Plugins which You can make use of.
 
 ***
 
