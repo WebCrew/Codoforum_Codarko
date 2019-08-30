@@ -1,10 +1,5 @@
 # WebCrew_codarko
- Codarko is the name of a dark theme for CODOforum version 4.7+
- 
-#  HumHub-Theme-TodGmbH
-
-I did a lot of changes and fixed a lot of issues and bugs. 
-Theme is working nice with latest HumHub release! Version 1.0.1+
+ Codarko is the name of a dark theme for CODO Forum from CODOLOGIC
 
 **Compatible with latest version of CODO Forum 4.7+**
 
