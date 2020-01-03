@@ -1,7 +1,7 @@
 # WebCrew_codarko
  Codarko is the name of a dark theme for CODO Forum from CODOLOGIC
 
-**Compatible with latest version of CODO Forum 4.7+**
+**Compatible with latest version of CODO Forum 4.8.3+**
 
 ***
 
@@ -27,7 +27,7 @@
 
 
 ### Install
-- Extract the archive and upload it with ileZilla (FTP) to sites/default/themes/
+- Extract the archive and upload it with FileZilla (FTP) to sites/default/themes/
 - activate the theme from CODOforum admin backend
 - do NOT upload the "Extras" folder. It includes some Category Icons and Plugins which You can make use of.
 
