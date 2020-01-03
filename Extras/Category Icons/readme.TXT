@@ -1,6 +1,6 @@
 The icons are from https://game-icons.net
 
-You can use em for Category Icons rom the Admin Backend o CF.
+You can use them for Category Icons from the Admin Backend o CF.
 
 Installation:
 
