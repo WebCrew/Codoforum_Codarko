@@ -19,7 +19,7 @@
 ### Features
 - dark flat design
 - ready for ThaNico's userlist plugin
-- ready or Similar Topics plugin
+- ready for Similar Topics plugin
 - more updates will follow
 
 ***
