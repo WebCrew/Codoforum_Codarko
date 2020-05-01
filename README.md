@@ -3,6 +3,8 @@
 
 **Compatible with latest version of CODO Forum 4.9.3+**
 
+Please consider whether you don't want to give me a star for my repository as support for Codoforum and my work on the theme - thank you!
+
 ***
 
 
@@ -46,6 +48,6 @@
 
 
 ### Author plus Team
-- Andreas Holzer - [https://crazymates.de/Crazymate](https://crazymates.de)
+- Andreas Holzer / WebCrew - [https://crazymates.de/Crazymate](https://crazymates.de)
 - CODOLOGIC Team - [https://codologic.com/](https://codologic.com/)
 
