@@ -3,7 +3,7 @@
 
 **Compatible with latest version of CODO Forum 4.9.3+**
 
-Please consider whether you don't want to give me a star for my repository as support for Codoforum and my work on the theme - thank you!
+> Please consider if You want to give me a STAR for my work on that repository and as a support for Codoforum and my work on the theme - thank you!
 
 ***
 
