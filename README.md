@@ -46,7 +46,7 @@
 ***
 
 [![WebCrew's github stats](https://github-readme-stats.vercel.app/api?username=WebCrew)](https://github.com/WebCrew/github-readme-stats)
-
+![WebCrew's github stats](https://github-readme-stats.vercel.app/api?username=WebCrew&show_icons=true&theme=merko)
 
 
 ### Author plus Team
