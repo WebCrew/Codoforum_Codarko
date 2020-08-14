@@ -29,6 +29,7 @@
 
 
 ### Install
+- First it is important that you change the theme folder name to "codarko"
 - Extract the archive and upload it with FileZilla (FTP) to sites/default/themes/
 - activate the theme from CODOforum admin backend
 - do NOT upload the "Extras" folder. It includes some Category Icons and Plugins which You can make use of.
@@ -38,9 +39,9 @@
 
 ### How to change Background & Header image
 - Open to sites/default/themes/codarko/cbehead.jpg
-- Now replace cbehead.jpg with Your own image - make sure you use the same file name.
+- Now replace "cbehead.jpg" with Your own image - make sure you use the same file name (must be: cbhead.jpg). So if your new header image will have a different name, for example "topcover.jpg" make sure to reanme it to "cbhead.jpg.
 - Open to sites/default/themes/codarko/background.jpg
-- Now replace background.jpg with Your own image - make sure you use the same file name.
+- Now replace "background.jpg" with Your own image - make sure you use the same file name. (must be: background.jpg). So if your new background image will have a different name, for example "wallpapaer.jpg" make sure to reanme it to "background.jpg.
 - Finally, clear your browser or Codoforum System Cache and you're done.
 
 ***
