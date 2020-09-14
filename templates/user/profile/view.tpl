@@ -17,7 +17,10 @@
             </div>
              <div class="codo_username col-md-6 col-sm-6 codo-username-profile">
                <h4>{$user->username}</h4>
-               <p>
+               {if $currentUser->isAdminOrModerator()}
+                    <button data-toggle="modal" data-target="#codo_reward_badges" class="codo_btn codo_btn_def codo_btn_sm"><i class="fa fa-trophy"></i> Reward Badges </button>
+                {/if}
+                <p>
                 {$user->signature}
             </p>
         </div>
@@ -235,9 +238,32 @@
 
     </div>
 
+    {* Cannot move posts to this topic modal *}
+    <div class="modal fade" id='codo_reward_badges' role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">{_t("Reward badges")}</h4>
+                    <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="codo_badges-all-list">
+
+                    </div>
+                    <div class="text-muted"> {_t("You can add/remove badges for this user by clicking on them")}</div>
+                    <div id="codo_badges_removed" class="text-muted"> {_t("Rewarded badges removed from this user: ")}<b></b></div>
+                </div>
+                <div class="modal-footer">
+                    <div class="codo_load_more_bar_black_gif"></div>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{_t("Close")}</button>
+                    <button id="codo_save_badges" type="button" class="btn btn-primary">{_t("Save changes")}</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
     <script type="text/javascript">
-
         CODOFVAR = {
             userid: {$user->id},
             tab: '{$tab}'
