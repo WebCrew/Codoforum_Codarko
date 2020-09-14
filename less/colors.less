@@ -8,32 +8,33 @@
 
 //body
 
-@bodyBgColor: #272633;
-@bodyBg: @bodyBgColor; //url('your_img_path.png') repeat;// to add background image instead of color
+@bodyBgColor: #f5f5f5;
+@bodyBg: #bababa; //url('your_img_path.png') repeat;// to add background image instead of color
 //repeat says whether the background image must be repeated (for eg. if your image is small it will be repeated)
 //you can specify no-repeat instead of repeat to prevent the background image from repeating
 
-@startGradient: #1b43b5;
-@endGradient:#d03c43;
 
-@highlightBg: #d03c43;
+@startGradient: #5a7fee;
+@endGradient: #844aa6;
+
+@highlightBg: #54a3e0;
 @highlightColor: #fff;
 
-@linkColor: #d03c43;
+@linkColor: #3f8cc3;
 @linkHoverColor: #0097f6;
 @linkHoverBg: #fff;
 
 //different shades of borders
-@borderColor: #6c757d;
+@borderColor: #ccc;
 @borderLightColor: #efefef;
 @borderDarkColor: #c0c0c0;
 
-@boxshadowColor: #6c757d;
+@boxshadowColor: #ccc;
 
 @bg: #fff;
 
 @inverseBg: @linkColor;
-@color: #222;//text color
+@color: #222; //text color
 @inverseColor: #fff; //text color on inverted bg color
 
 //different shades of desc color(greyish default)
@@ -51,7 +52,7 @@
 
 //badges
 //new topic badge
-@badgeNewBg: #d03c43;
+@badgeNewBg: #3f8cc3;
 @badgeNewColor: #fff;
 @badgeNewBorderColor: #1471af;
 @badgeNewBoxShadow: 0px 1px 3px #1471af;
@@ -64,7 +65,7 @@
 @badgeNewRepliesBorderLeftColor: #D83722;
 
 
-//input 
+//input
 @inputBg: #fdfdfd;
 @inputColor: @color;
 @inputBorderColor: @borderColor;
@@ -102,7 +103,7 @@
 
 @newTopicButtonHoverColor: #1c68a1;
 
-//below styles are for individual category 
+//below styles are for individual category
 @categoryListBg: @bg;
 @categoryListBorderBottomColor: @categoryListContainerBorderColor;
 @categoryListTextShadow: 0 1px 0 #fff;
@@ -120,21 +121,22 @@
 @categoryListActiveHoverColor: #fff;
 @categoryListActiveContentColor: @categoryListActiveColor;
 
-//new topic count that appears in a category 
+//new topic count that appears in a category
 @categoryListNewTopicsBg: #eee;
 @categoryListNewTopicsColor: @descDarkerColor;
 @categoryListNewTopicsBoxShadow: inset 1px 1px 2px @descLightColor;
 
 @iconColor: #333; //normal icon color
 @iconInverseColor: #fff; //icon color on inverted bg color
-@iconLightColor: grey; 
+@iconLightColor: grey;
 
 /*------------- END MAIN COLORS -------------*/
 
-//the notification that pop up at the bottom right 
+//the notification that pop up at the bottom right
 //when something new happens like: "new topic", "new reply" etc
-@inlineNotificationBgColor: rgba(255,255,255,0.9);
+@inlineNotificationBgColor: @bg;
 @inlineNotificationColor: @color;
+@inlineNotificationBorderColor: @borderColor;
 
 //the notifications that you see when you click the bell icon in the menu
 @bellNotificationBg: @bg;
@@ -158,15 +160,16 @@
 
 //Global nav bar @see general.less
 
-@globalNavBg: #202225; 
-@globalNavBoxShadow: 1px 0 2px 0 #6c757d;
- 
-@globalNavTitle: #d03c43; //site title color
+@globalNavBg: #fff; //rgba(45,45,45,.85);
+@globalNavBoxShadow: 0 2px 2px darkgray;
 
-@globalNavLink: #d03c43; //link color
+@globalNavTitle: #5a7fee; //site title color
+
+@globalNavLink: #5a7fee; //link color
 @globalNavLinkHoverBg: #fff; //link backgrround color on hover
 @globalNavLinkHover: #555; //link color on hover
 @globalNavIconColor: @globalNavLink; //The color of icons like bell, search, etc in the menu
+
 @globalNavIconBg: #fff;
 @globalNavIconBar: #000;
 
@@ -202,7 +205,7 @@
 
 //widget styles
 @widgetBg: @topicCreateWidgetBg;
-@widgetHeaderBg: #d03c43;
+@widgetHeaderBg: #31719e;
 @widgetHeaderColor: @bg;
 @widgetHeaderBorderColor: @linkHoverColor;
 
@@ -239,9 +242,9 @@
 @buttonDefaultColor: @color;
 @buttonDefaultBorderColor: @linkColor;
 
-@buttonPrimaryBg: #66b9ec;
+@buttonPrimaryBg: @startGradient;
 @buttonPrimaryColor: @bg;
-@buttonPrimaryBorderColor: #66b9ec;
+@buttonPrimaryBorderColor: @linkHoverColor;
 @buttonDangerBg: #9a1616;
 @buttonDangerColor: @bg;
 @buttonDangerBorderColor: #9a1616;
@@ -259,7 +262,6 @@
 @topicsNavbarBorderColor: @linkHoverColor;
 
 
-
 // variables for categories.less
 @topicCreateWidgetBg: #f6f6f6;
 
@@ -268,7 +270,7 @@
 @categoryDescBg: @bg; //desription above subcats in cat page
 @categoryDescColor: @descDarkColor;
 @categoryDescBorder: @borderLightColor;
-@categoryDescTextShadow:  0 1px 0 @bg;
+@categoryDescTextShadow: 0 1px 0 @bg;
 
 @catTitleBorderBottom: @brdr;
 @catTitleColor: #fff;
@@ -287,15 +289,11 @@
 @subCatTxtBorderBottom: @brdr;
 
 @newTopicBoxShadowColor: @brdr;
-@newTopicFoldBorderColor:  #1f71af @bodyBgColor;
-
-
+@newTopicFoldBorderColor: #1f71af @bodyBgColor;
 
 
 //Article --- appears in topics page category page & post page
 @articleBg: #fff;
-@articleBorderColor: @brdr;
-@articleHoverBorderColor: @linkColor;
 @articleSecondaryDescColor: @descLightColor;
 @articleAuthorColor: @descDarkerColor;
 @article_A_Color: #555;
@@ -322,12 +320,12 @@
 @createTopicCatBg: #f9f9f9;
 
 //the styles for no more topics that appears in All topics page
-@topicsEndBg: #d03c43;
+@topicsEndBg: @linkHoverColor;
 @topicsEndColor: @bg;
 @topicsTextShadow: 0 1px 0 #000;
 
 //the separator that appears after each post in the posts page
-@postSeparatorBorder: 1px solid  @borderColor;
+@postSeparatorBorder: 1px solid @borderColor;
 
 //Article END
 
@@ -347,14 +345,6 @@
 
 @viewProfileUserDetailsColor: @descDarkColor;
 
-
-//Advanced search styles
-@searchOutLineFocusColor: @linkColor;
-@searchDropDownArrowColor: #000;
-@searchAdvancedOptionsBg: @bg;
-@searchAdvancedOptionsBoxShadow: 1px 1px 1px @borderColor;
-@searchAdvancedLabelColor: @labelColor;
-@searchAdvancedSelectBg: #fafafa; 
 
 //Statistics counter styles
 @statCountBorderRightColor: @borderColor;
@@ -420,6 +410,8 @@
 @statisticsIconNumViewsColor: @articleIconNumViewsColor;
 @statisticsIconNumRepliesColor: @articleIconNumRepliesColor;
 
+@badgeRewardedBorderColor: @color;
+
 //-------------------CSS3 Theme Custom
 
 .footer {
@@ -482,7 +474,7 @@
 
 body {
     background-attachment: fixed !important;
-    background: #1a1d1f url(/board/sites/default/themes/codarko/img/background.jpg) no-repeat center top;
+    background: #1a1d1f url(/board/sites/default/themes/cutebutevil/img/background.jpg) no-repeat center top;
     background-size: 100%;
     font-weight: 560;
     line-height: 1.6;
@@ -490,7 +482,7 @@ body {
 
 .codo_topics .codo_topics_head {
     height: 100px;
-    background: #1a1d1f url(/board/sites/default/themes/codarko/img/cbehead.jpg) no-repeat center top;
+    background: #1a1d1f url(/board/sites/default/themes/cutebutevil/img/cbehead.jpg) no-repeat center top;
 }
 
 .codo_topics .codo_topics_body>div>article>.codo_topics_topic_foot {
@@ -750,12 +742,17 @@ container .codo_topic .codo_notification_block>.codo_notification_block_desc {
 }
 
 .codo_page_content {
-    background: #202226;
+    background: #222223;
     box-shadow: none;
 }
 
 .codo_topics .codo_topics_body .article_msg_hidden {
     background: #202225;
 }
+
+.codo_badge {
+    border: 2px solid #dc3545;
+}
+
 
 
