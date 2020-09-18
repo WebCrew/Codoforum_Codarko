@@ -229,6 +229,9 @@
                     {$field.output}
                     {/foreach}
                 </div>
+                <div class="codo_user_badges">
+
+                </div>
                 {"block_profile_user_statistics_after"|load_block}
             </div>
         </div>

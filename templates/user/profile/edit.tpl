@@ -38,7 +38,7 @@ Edit
         </div>
     </div>
     <div class="container" style="padding-top:0px">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <ul class="nav nav-tabs" id="profile_tabs" role="tablist">
             <li class="nav-item">
                 <a class="nav-link" href="index.php?u=user/profile">{_t("Overview")}</a>
             </li>
@@ -56,13 +56,13 @@ Edit
             </li>
         </ul>
 
-        <div id="profile_edit_status" class="codo_notification" style="display: none"></div>
 
         <div class="row">
 
                 {"block_profile_edit_before"|load_block}
 
              <div class="col-md-8 col-sm-12">
+                 <div id="profile_edit_status" class="codo_notification" style="display: none"></div>
                <div class="tab-content">
 
                 <div class="tab-pane fade active show" id="edit">
@@ -87,8 +87,8 @@ Edit
                         <form action="{$smarty.const.RURI}user/profile/{$user->id}/edit" method="POST" enctype="multipart/form-data" class="form-horizontal" role="form">
                         <span class="mdi mdi-checkbox-multiple-marked"></span>
                         <div class="codo_edit_profile_title">
-                            <div class=""><span>Edit Profile</span></div>
-                            <div style="float: right" class="col-md-6">
+                            <div class=""><span>{_t("Edit Profile")}</span></div>
+                            <div style="float: right" class="col-xs-6">
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
                                         <button type="submit" class="codo_btn codo_btn_primary">{_t("Save Changes")}</button>
@@ -217,6 +217,7 @@ Edit
 
                     {"block_profile_edit_details_after"|load_block}
 
+                    {if !$is_azure_ad_active}
                     <div class="codo_edit_profile" style="padding: 0">
 
                         {"block_profile_change_pass_start"|load_block}
@@ -264,6 +265,7 @@ Edit
                         </form>
                         {"block_profile_change_pass_end"|load_block}
                     </div>
+                    {/if}
 
                 </div>
             </div>
@@ -278,7 +280,7 @@ Edit
                 <div class="codo_edit_profile">
 
                     <div class="codo_edit_profile_title">
-                        <div class=""><span>General</span></div>
+                        <div class=""><span>{_t("General")}</span></div>
                     </div>
                     <br/>
                     <form class="form-horizontal" id="codo_form_user_preferences">
@@ -302,7 +304,7 @@ Edit
                             <label class="control-label col-sm-4 profile-edit-label">{_t("Send emails when i am online")}</label>
                             <div class="col-sm-6">
                             <div id="codo_send_emails_when_online" class="codo_switch {match_switch key='send_emails_when_online' value='yes'}" style="margin-top: 6px">
-                            
+
                             <div class="codo_switch_toggle"></div>
                             <span class="codo_switch_on">{_t('Yes')}</span>
                             <span class="codo_switch_off">{_t('No')}</span>
@@ -372,7 +374,7 @@ Edit
                     </div>
 
                             <div class="codo_edit_profile_title">
-                    <div class=""><span>Notification level</span></div>
+                    <div class=""><span>{_t("Notification level")}</span></div>
                     </div>
 
                             <div class="codo-preferences-container">
@@ -380,18 +382,15 @@ Edit
                             <div class="form-group">
                                 <label class="control-label profile-edit-label-normal">{_t("When I create a topic")}</label>
                                 <div class="col-12" style="height:120px;">
-                                    {assign id '1'}
                                     {assign my_subscription_type 'notification_type_on_create_topic'|get_preference}
-                                    {include file='forum/notification_level.tpl'}
+                                    {include file='forum/notification_level.tpl' id='1'}
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label profile-edit-label-normal">{_t("When I reply a topic")}</label>
                                 <div class="col-12" style="height:120px;">
-
-                                    {assign id '2'}
                                     {assign my_subscription_type 'notification_type_on_reply_topic'|get_preference}
-                                    {include file='forum/notification_level.tpl'}
+                                    {include file='forum/notification_level.tpl' id='2'}
                                 </div>
                             </div>
 
@@ -412,7 +411,7 @@ Edit
                 <div class="codo_edit_profile">
                     <fieldset>
                         <div class="codo_edit_profile_title">
-                            <div class=""><span>Categories</span></div>
+                            <div class=""><span>{_t("Categories")}</span></div>
                         </div>
                         <!--<legend>{_t("Categories")}</legend>-->
                         {assign is_category 'yes'}
@@ -430,14 +429,14 @@ Edit
                                 </div>
                                 <div class="col-sm-8">
                                     {assign my_subscription_type $cat.type}
-                                    {include file='forum/notification_level.tpl'}
+                                    {include file='forum/notification_level.tpl'  id="{'_category_'}{$cat.cid}"}
                                 </div>
                             </div>
                         {/foreach}
                         <!--<div class='col-md-12' style='height: 3em'></div>
                         <legend>{_t("Topics")}</legend>-->
                         <div class="codo_edit_profile_title" style="clear:both;">
-                            <div class=""><span>Topics</span></div>
+                            <div class=""><span>{_t("Topics")}</span></div>
                         </div>
                         {assign is_category 'no'}
 
@@ -451,7 +450,7 @@ Edit
                             {/if}
 
                             <div class="codo_subscription col-sm-12">
-                                <div class="col-sm-4">
+                                <div class="col-sm-12">
                                     <div class="codo_subscription_img">
                                         <a href="{$smarty.const.RURI}user/profile/{$topic.id}">
                                             <img draggable="false" src="{$avatar}" />
@@ -461,9 +460,9 @@ Edit
                                     <a href="{$smarty.const.RURI}topic/{$topic.tid}/"
                                        class="codo_subscription_a_style">{$topic.title}</a>
                                 </div>
-                                <div class="col-sm-7">
+                                <div class="col-sm-9">
                                     {assign my_subscription_type $topic.type}
-                                    {include file='forum/notification_level.tpl'}
+                                    {include file='forum/notification_level.tpl' id="{'_topic_'}{$topic.tid}"}
                                 </div>
                             </div>
 
@@ -504,7 +503,7 @@ Edit
 
                             </div>
                             <div class="codo_user_info_label">
-                            
+
                                 {_t("posts")}
                             </div>-->
                             <div class="col-md-6 codo_profile_left" style="margin-top: 2px">
@@ -519,7 +518,7 @@ Edit
 
                             </div>
                             <div class="codo_user_info_label">
-                            
+
                                 {_t("reputation")}
                             </div>-->
                             <div class="col-md-6 codo_profile_left" style="margin-top: 2px">
@@ -533,10 +532,10 @@ Edit
                     </div>
                     <div class="codo_user_details">
 
-                        <div style="color:#c5bba7;"> {_t("Joined :")} <span style="float:right;color:#c5bba7;font-weight:bold">{$user->created|get_pretty_time}</span>
+                        <div style="color:#9f9f9f;"> {_t("Joined :")} <span style="float:right;color:#3e3e3e;font-weight:bold">{$user->created|get_pretty_time}</span>
                         </div>
-                        <div style="color:#c5bba7;">
-                            {_t("Last login :")} <span style="float:right;color:#c5bba7;font-weight:bold">{if $user->last_access eq 0}{_t('never')}{else}{$user->last_access|get_pretty_time}{/if}</span>
+                        <div style="color:#9f9f9f;">
+                            {_t("Last login :")} <span style="float:right;color:#3e3e3e;font-weight:bold">{if $user->last_access eq 0}{_t('never')}{else}{$user->last_access|get_pretty_time}{/if}</span>
                         </div>
 
                     </div>
@@ -567,4 +566,3 @@ Edit
 
     </script>
 {/block}
-

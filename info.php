@@ -1,7 +1,7 @@
 <?php
 
 $info['name'] = 'codarko';
-$info['description'] = 'A dark theme for Codoforum';
+$info['description'] = 'A dark gamer theme for Codoforum';
 $info['version'] = '1.x';
 $info['author'] = "WebCrew";
 $info['author_url'] = 'https://github.com/WebCrew';
