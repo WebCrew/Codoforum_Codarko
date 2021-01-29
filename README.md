@@ -6,7 +6,7 @@
 ***
 
 ## We need YOU!
-Please register with Crazymates and join the Codoforum group for developers and fans. We need your support, because only if everyone helps, more and more developers will find us and we will all get more Codoforum themes and plugins. 
+Please register with Crazymates and join the Codoforum group for developers and fans. We need your support, because only if everyone helps, more and more developers will find their way to Codoforum and we will all benefit from more Codoforum themes and plugins. 
 <a href="https://crazymates.de/groups/codoforum_devs_fans">Join us now.</a>
 
 
