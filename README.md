@@ -3,6 +3,8 @@
 
 **Compatible with latest version of CODO Forum 5.0.2+**
 
+Let me know  it please if I have maybe missed something and I will try to update it asap.
+
 ***
 
 ## We need YOU!
