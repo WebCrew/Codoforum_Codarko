@@ -4,13 +4,10 @@
 **Compatible with latest version of CODO Forum 5.0.2+**
 
 Let me know  it please if I have maybe missed something and I will try to update it asap.
+You can also visit the Discussion Board here at the repository and aswer the Poll there:
+[https://github.com/WebCrew/WebCrew_codarko/discussions/2#discussion-4147962](Enter the Discussion Board)
 
 ***
-
-## We need YOU!
-Please register with Crazymates and join the Codoforum group for developers and fans. We need your support, because only if everyone helps, more and more developers will find their way to Codoforum and we will all benefit from more Codoforum themes and plugins. 
-<a href="https://crazymates.de/groups/codoforum_devs_fans">Join us now.</a>
-
 
 ## Theme View
 <a href="http://crazymates.de">
