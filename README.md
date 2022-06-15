@@ -5,7 +5,7 @@
 
 Let me know  it please if I have maybe missed something and I will try to update it asap.
 You can also visit the Discussion Board here at the repository and aswer the Poll there:
-[https://github.com/WebCrew/WebCrew_codarko/discussions/2#discussion-4147962](Enter the Discussion Board)
+https://github.com/WebCrew/WebCrew_codarko/discussions/2#discussion-4147962
 
 ***
 
