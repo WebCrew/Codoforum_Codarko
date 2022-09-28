@@ -1,7 +1,7 @@
 # WebCrew_codarko
  Codarko is the name of a dark theme for CODO Forum from CODOLOGIC
 
-**Compatible with latest version of CODO Forum 5.0.2+**
+**Compatible with latest version of CODO Forum 5.2.1+**
 
 Let me know  it please if I have maybe missed something and I will try to update it asap.
 You can also visit the Discussion Board here at the repository and aswer the Poll there:
