@@ -1,0 +1,109 @@
+<div class="codo_page_{{{page_no}}}">
+    {{#each topics}}
+    <article class="clearfix {{{hide "hmm"}}}">
+
+    <!--
+        <div class="codo_topics_topic_img">
+            <a href="{{{const "RURI"}}}category/{{{cat_alias}}}">
+                <img draggable="false" src="{{{const "DURI"}}}{{{const "CAT_ICON_IMGS"}}}{{{cat_img}}}" />
+            </a>
+        </div>-->
+        <div class="codo_post_statistics" style="position:absolute;top: 20px;">
+
+            {{#if is_topic}}
+                <div class='codo_new_topic_badge'>{{{i18n "Topic"}}}</div>
+            {{else}}
+                <div class='codo_new_topic_badge'>{{{i18n "Post"}}}</div>
+            {{/if}}
+
+            <div title="{{{i18n "No. of views"}}}" id="codo_topics_no_views">
+                <div style="float:left;padding-top:2px;" style="float:left;">
+                    <i class="icon icon-eye2" style="font-size:16px;"></i>
+                </div>
+                <div style="float:left;font-weight:bold;padding-left:3px;">
+                    {{no_views}}
+                </div>
+            </div>
+            <div title="{{{i18n "No. of replies"}}}">
+                <div style="float:left;padding-top:2px;" style="float:left;">
+                    <i class="icon icon-message" style="font-size:16px;"></i>
+                </div>
+                <div style="float:left;font-weight:bold;padding-left:3px;">
+                    <span>{{no_replies}}</span>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+        <div class="codo_topics_topic_content">
+            <div class="codo_topics_topic_avatar" data-userid="{{id}}">
+                <a href="{{{const "RURI"}}}user/profile/{{id}}">
+                    <img draggable="false" src="{{avatar}}" />
+                </a>
+            </div>
+
+            {{#if in_search}}
+            <div class="codo_topics_topic_title"><a id="codo_topic_link_{{topic_id}}" href="{{{const "RURI"}}}topic/{{topic_id}}/{{{safe_title}}}/post-{{post_id}}#post-{{post_id}}" style="font-size:16px;">{{{title}}}</a></div>
+            {{else}}
+            {{#if new_replies}}
+            <div class="codo_topics_topic_title"><a id="codo_topic_link_{{topic_id}}" href="{{{const "RURI"}}}topic/{{topic_id}}/{{{safe_title}}}/post-{{last_reply_id}}#post-{{last_reply_id}}" style="font-size:16px;">{{{title}}}</a></div>
+            {{else}}
+            <div class="codo_topics_topic_title"><a id="codo_topic_link_{{topic_id}}" href="{{{const "RURI"}}}topic/{{topic_id}}/{{{safe_title}}}" style="font-size:16px;">{{{title}}}</a></div>
+            {{/if}}
+            {{/if}}
+
+            <div class="codo_topics_topic_name">
+                <a href="{{{const "RURI"}}}user/profile/{{{id}}}"><span class="role_styled role_{{{role}}}">{{{name}}}</span></a>
+                <span><span id="posted_txt">{{{i18n "posted"}}} </span>{{post_created}}</span>
+            </div>
+
+
+        </div>
+        <div class="codo_topics_topic_message {{{hide "hide_msg"}}}">
+            {{{message}}}
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12 codo_readmore_container">
+                <div class="codo_topics_topic_oembed_video">
+                    {{{oembed_video}}}
+                </div>
+                <a href="{{{const "RURI"}}}topic/{{topic_id}}/{{{safe_title}}}" rel="nofollow" class="codo_readmore">{{i18n "read more"}}</a>
+            </div>
+
+        </div>
+        <div class="row">
+            <!--<div class="col-md-10 col-xs-12 codo_readmore_container">-->
+            <div class="codo_readmore_container">
+                <div class="codo_topics_topic_category">
+                    <div class="category-info">Category: </div>
+                    <a href="{{{const "RURI"}}}category/{{{cat_alias}}}" class="category-block">
+                        <img draggable="false" src="{{{const "DURI"}}}{{{const "CAT_ICON_IMGS"}}}{{{cat_img}}}" />
+                        <div>{{cat_name}}</div>
+                    </a>
+                </div>
+                {{#if tags}}
+                <div class="codo_tag_list">
+                    <div class="codo_tags_all col-xs-12" style="padding-left:0px;">
+                        <!--<i class="icon-tags icon-light"></i>-->
+                        {{#each tags}}
+                        <a class="codo_tag_a_style" title="{{{i18n "find topics tagged"}}} '{{tag}}'" href="{{{const "RURI"}}}tags/{{tag}}" title="">{{tag}}</a>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+
+        <div class="codo_topics_topic_foot clearfix">
+
+
+        </div>
+
+    </article>
+    {{/each}}
+</div>

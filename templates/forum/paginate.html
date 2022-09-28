@@ -1,0 +1,24 @@
+<div class="{{constants.cls}}">
+
+
+    {{#each page}}
+
+    {{#if last}}
+    ...
+    {{/if}}
+
+
+    {{#if active}}
+    <a class="codo_topics_curr_page">{{page}}</a>
+    {{else}}
+    <a href="{{../../constants.url}}{{page}}&str={{../../constants.search}}">{{page}}</a>
+    {{/if}}
+
+    {{#if first}}
+    ...
+    {{/if}}
+
+
+    {{/each}}
+
+</div>

@@ -1,0 +1,147 @@
+{{#each posts}}
+<a name="post-{{post_id}}"></a>
+<article id="post-{{post_id}}" class="clearfix">
+
+    <div class="codo_posts_post_moderation">
+
+
+        {{#if is_topic}}
+            {{#if can_manage_topic}}
+            <div class="dropdown codo_manage_topic">
+                <div class="codo_manage_button" data-toggle="dropdown"  id="codo_manage_options_menu">
+                    <i class="icon-more-vert"></i>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="codo_manage_options_menu">
+                    {{#if can_edit_topic}}
+                    <li id="codo_posts_edit_{{{topic_id}}}" class="dropdown-item codo_posts_edit_post codo_post_this_is_topic"
+                        role="presentation">
+                            <i class="icon-edit"></i> {{{i18n "Edit"}}}
+                    </li>
+                    {{/if}}
+                    {{#if can_delete_topic}}
+                    <li id="codo_posts_trash_{{{topic_id}}}" class="dropdown-item codo_posts_trash_post codo_post_this_is_topic"
+                        role="presentation">
+                            <i class="icon-trash"></i> {{{i18n "Delete"}}}
+                    </li>
+                    {{/if}}
+                    {{#if can_see_history}}
+                    <li id="codo_posts_history_{{{post_id}}}" class="dropdown-item codo_posts_history"
+                        role="presentation">
+                            <i class="fa fa-history"></i> {{{i18n "History"}}}
+                    </li>
+                    {{/if}}
+
+                </ul>
+            </div>
+            {{/if}}
+
+        {{else}}
+
+            {{#if can_manage_post}}
+            <div class="dropdown codo_manage_topic">
+                <div class="codo_manage_button" data-toggle="dropdown"  id="codo_manage_options_menu">
+                    <i class="icon-more-vert"></i>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="codo_manage_options_menu">
+                    {{#if can_edit_post}}
+                    <li id="codo_posts_edit_{{{post_id}}}" class="dropdown-item codo_posts_edit_post codo_post_this_is_post"
+                        role="presentation">
+                            <i class="icon-edit"></i> {{{i18n "Edit"}}}
+                    </li>
+                    {{/if}}
+                    {{#if can_delete_post}}
+                    <li id="codo_posts_trash_{{{post_id}}}" class="dropdown-item codo_posts_trash_post codo_post_this_is_post"
+                        role="presentation">
+                            <i class="icon-trash"></i> {{{i18n "Delete"}}}
+                    </li>
+                    {{/if}}
+                    {{#if can_see_history}}
+                    <li id="codo_posts_history_{{{post_id}}}" class="dropdown-item codo_posts_history"
+                        role="presentation">
+                            <i class="fa fa-clock-o"></i> {{{i18n "History"}}}
+                    </li>
+                    {{/if}}
+
+                </ul>
+            </div>
+            {{/if}}
+        {{/if}}
+    </div>
+
+    <div class="codo_posts_user_info">
+        <div class="codo_posts_post_avatar codo_posts_post_avatar_{{id}}" data-userid="{{id}}">
+            <a href="{{{const "RURI"}}}user/profile/{{id}}">
+                <img draggable="false" src="{{avatar}}" />
+            </a>
+        </div>
+        <!--<div class="codo_posts_post_title">
+
+        </div>-->
+
+        <div class="codo_posts_post_name codo_posts_post_name_{{id}}">
+            <a href="{{{const "RURI"}}}user/profile/{{id}}"><span class="role_styled role_{{{role}}}">{{{name}}}</span></a>
+        </div>
+
+        <div class="codo_posts_post_desc">
+            {{#if in_search}}
+            {{{i18n "posted"}}}&nbsp;<a href="{{{const "RURI"}}}topic/{{tid}}/{{safe_title}}/post-{{post_id}}#post-{{post_id}}">{{post_created}}</a>
+            {{else}}
+            <span>
+                {{{i18n "posted"}}}&nbsp;<a href="{{{const "RURI"}}}topic/{{tid}}/{{safe_title}}/{{page}}#post-{{post_id}}">{{post_created}}</a>
+            </span>
+            {{/if}}
+        </div>
+
+        <div class="codo_posts_user_badges">
+            {{#each badges}}
+                {{#if hasDescription}}
+                    <div data-trigger="hover" data-placement="bottom" data-toggle="popover" title="{{{name}}}"
+                         data-content="{{{description}}}" class="codo_badge">
+                        <img src="{{{const "DURI"}}}{{{const "BADGES_PATH"}}}{{{badgeLocation}}}" alt="badge">
+                    </div>
+                {{else}}
+                    <div data-trigger="hover" data-placement="bottom" data-toggle="popover"
+                         data-content="{{{name}}}" class="codo_badge">
+                        <img src="{{{const "DURI"}}}{{{const "BADGES_PATH"}}}{{{badgeLocation}}}" alt="badge">
+                    </div>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="codo_posts_post_content">
+        <a title="{{i18n "Quote post"}}" class="codo_quote_button"><i class="icon-quote"></i> </a>
+        <div class="codo_posts_post_message">{{{message}}}</div>
+        <div class="codo_posts_post_imessage">{{imessage}}</div>
+
+        {{#if signature}}
+            <div class="codo_posts_signature">{{{signature}}}</div>
+        {{/if}}
+
+
+        {{#if post_modified}}
+            <div class="codo_last_edit">{{{i18n "edited"}}} {{post_modified}}</div>
+        {{/if}}
+
+        {{#if can_move_topic}}
+            <input type="checkbox" name="group1" id="codo_posts_select_{{{post_id}}}" class="chk-box codo_posts_select_post"/>
+            <label class="codo_select_post_checkbox_label" for="codo_posts_select_{{{post_id}}}"></label>
+        {{/if}}
+        {{#if can_move_post}}
+            <input type="checkbox" name="group1" id="codo_posts_select_{{{post_id}}}" class="chk-box codo_posts_select_post"/>
+            <label class="codo_select_post_checkbox_label" for="codo_posts_select_{{{post_id}}}"></label>
+        {{/if}}
+
+
+        {{#if can_rep}}
+        <div class="codo_posts_post_reputation" id="codo_posts_rep_{{{post_id}}}">
+            <div class="codo_btn codo_btn_danger codo_rep_up_btn codo_tooltip" title="{{i18n "vote up"}}"><i class="icon-thumbs-up"></i></div>
+            <div class="codo_reputation_points codo_tooltip {{#if is_neg_rep}}codo_reputation_negative{{/if}}" data-placement="right" title="{{i18n "reputation points"}}">{{reputation}}</div>
+            <div class="codo_btn codo_btn_danger codo_rep_down_btn codo_tooltip" title="{{i18n "vote down"}}" data-placement="bottom"><i class="icon-thumbs-down"></i></div>
+        </div>
+        {{/if}}
+
+    </div>
+
+</article>
+<!--<div class="codo_topic_separator"></div>-->
+{{/each}}

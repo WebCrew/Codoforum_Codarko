@@ -314,60 +314,20 @@ Edit
                             <div class="row form-group">
                                 <label class="col-sm-4 profile-edit-label">{_t("Show real-time notifications")}</label>
                                 <div class="col-sm-6">
-                                    <!--<div id="real_time_notifications" class="codo_switch {match_switch key='real_time_notifications' value='yes'}" style="margin-top: 6px">
+                                    <div id="real_time_notifications" class="codo_switch toggle_switch_container {match_switch key='real_time_notifications' value='yes'}" style="margin-top: 6px">
                                         <div class="codo_switch_toggle"></div>
                                         <span class="codo_switch_on">{_t('Yes')}</span>
                                         <span class="codo_switch_off">{_t('No')}</span>
-                                    </div>-->
-
-                                    <div class="codo-radio-btn">
-                                        <ul>
-                                          <li>
-                                            <input type="radio" id="f-option" name="real_time_notifications">
-                                            <label for="f-option">Yes</label>
-
-                                              <div class="check"></div>
-                                          </li>
-
-                                            <li>
-                                            <input type="radio" id="s-option" name="real_time_notifications">
-                                            <label for="s-option">No</label>
-
-                                                <div class="check">
-                                                    <div class="inside"></div>
-                                                </div>
-                                          </li>
-                                        </ul>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="row form-group">
                                 <label class="col-sm-4 profile-edit-label">{_t("Show desktop notifications")}</label>
                                 <div class="col-sm-6">
-                                    <!--<div id="desktop_notifications" class="codo_switch {match_switch key='desktop_notifications' value='yes'}" style="margin-top: 6px">
+                                    <div id="desktop_notifications" class="codo_switch toggle_switch_container {match_switch key='desktop_notifications' value='yes'}" style="margin-top: 6px">
                                         <div class="codo_switch_toggle"></div>
                                         <span class="codo_switch_on">{_t('Yes')}</span>
                                         <span class="codo_switch_off">{_t('No')}</span>
-                                    </div>-->
-                                    <div class="codo-radio-btn">
-                                        <ul>
-                                          <li>
-                                            <input type="radio" id="f-option2" name="desktop_notifications">
-                                            <label for="f-option2">Yes</label>
-
-                                              <div class="check"></div>
-                                          </li>
-
-                                            <li>
-                                            <input type="radio" id="s-option2" name="desktop_notifications">
-                                            <label for="s-option2">No</label>
-
-                                                <div class="check">
-                                                    <div class="inside"></div>
-                                                </div>
-                                          </li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -420,16 +380,16 @@ Edit
                             <div class="codo_subscription col-sm-12">
                                 <div class="col-sm-4">
                                     <div class="codo_subscription_img">
-                                        <img draggable="false" src="{$smarty.const.DURI}{$smarty.const.CAT_IMGS}{$cat.cat_img}" />
+                                        <img draggable="false" src="{$smarty.const.DURI}{$smarty.const.CAT_IMGS}{$cat->cat_img}" />
                                     </div>
 
-                                    <a href="{$smarty.const.RURI}topics/{$cat.cat_alias}">
-                                        {$cat.cat_name}
+                                    <a href="{$smarty.const.RURI}topics/{$cat->cat_alias}">
+                                        {$cat->cat_name}
                                     </a>
                                 </div>
                                 <div class="col-sm-8">
-                                    {assign my_subscription_type $cat.type}
-                                    {include file='forum/notification_level.tpl'  id="{'_category_'}{$cat.cid}"}
+                                    {assign my_subscription_type $cat->type}
+                                    {include file='forum/notification_level.tpl'  id="{'_category_'}{$cat->cid}"}
                                 </div>
                             </div>
                         {/foreach}
@@ -442,7 +402,7 @@ Edit
 
                         {foreach from=$topics item=topic}
 
-                            {assign var="avatar" value="{$smarty.const.DURI}{$smarty.const.PROFILE_IMG_PATH}{$topic.avatar}"}
+                            {assign var="avatar" value="{$smarty.const.DURI}{$smarty.const.PROFILE_IMG_PATH}{$topic->avatar}"}
 
                             {if $avatar == null}
 
@@ -452,17 +412,17 @@ Edit
                             <div class="codo_subscription col-sm-12">
                                 <div class="col-sm-12">
                                     <div class="codo_subscription_img">
-                                        <a href="{$smarty.const.RURI}user/profile/{$topic.id}">
+                                        <a href="{$smarty.const.RURI}user/profile/{$topic->id}">
                                             <img draggable="false" src="{$avatar}" />
                                         </a>
                                     </div>
 
-                                    <a href="{$smarty.const.RURI}topic/{$topic.tid}/"
-                                       class="codo_subscription_a_style">{$topic.title}</a>
+                                    <a href="{$smarty.const.RURI}topic/{$topic->tid}/"
+                                       class="codo_subscription_a_style">{$topic->title}</a>
                                 </div>
                                 <div class="col-sm-9">
-                                    {assign my_subscription_type $topic.type}
-                                    {include file='forum/notification_level.tpl' id="{'_topic_'}{$topic.tid}"}
+                                    {assign my_subscription_type $topic->type}
+                                    {include file='forum/notification_level.tpl' id="{'_topic_'}{$topic->tid}"}
                                 </div>
                             </div>
 

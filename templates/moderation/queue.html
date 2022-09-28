@@ -1,0 +1,70 @@
+<div class="codo_page_{{{page_no}}}">
+    {{#each topics}} 
+    <article class="clearfix">
+
+        <div class="codo_topics_topic_img">
+            <a href="{{{const "RURI"}}}category/{{{cat_alias}}}">
+                <img draggable="false" src="{{{const "DURI"}}}{{{const "CAT_ICON_IMGS"}}}{{{cat_img}}}" />
+            </a>
+        </div>
+
+        <div class="codo_posts_post_moderation">
+
+        </div> 
+
+
+        <div class="codo_topics_topic_content">
+            <div class="codo_topics_topic_avatar" data-userid="{{id}}">
+                <a href="{{{const "RURI"}}}user/profile/{{id}}">
+                    <img draggable="false" src="{{avatar}}" />
+                </a>
+            </div>
+            <div class="codo_topics_topic_name">
+                <a href="{{{const "RURI"}}}user/profile/{{{id}}}">{{name}}</a>
+                <span><span id="posted_txt">{{{i18n "posted"}}} </span>{{post_created}}</span>
+            </div>
+            <div class="codo_topics_topic_title"><a href="{{{const "RURI"}}}topic/{{topic_id}}/{{safe_title}}">{{{title}}}</a></div>                                        
+        </div>
+        <div class="codo_topics_topic_message {{{hide "hide_msg"}}}">
+            {{{message}}}
+        </div>
+
+        <div class="row">
+            <div class=" col-md-2 col-xs-12 codo_readmore_container">
+
+                {{#if overflow}}
+
+                <a href="{{{const "RURI"}}}topic/{{topic_id}}/{{safe_title}}" class="codo_readmore">{{i18n "read more"}}</a>
+                {{/if}}
+            </div>
+            <div class="col-md-10 col-xs-12 codo_readmore_container">
+                {{#if tags}}
+                <div class="codo_tag_list">
+                    <div class="codo_tags_all">
+                        <i class="icon-tags icon-light"></i>
+                        {{#each tags}}
+                        <a title="{{{i18n "find topics tagged"}}} '{{tag}}'" href="{{{const "RURI"}}}tags/{{tag}}" title="">{{tag}}</a>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+
+        <div class="codo_topics_topic_foot clearfix">
+
+            <div class="codo_topics_no_replies"><span>{{no_replies}}</span>{{{i18n "replies"}}}</div>
+            <div class="codo_topics_no_replies" id="codo_topics_no_views"><span>{{no_views}}</span>{{{i18n "views"}}}</div>
+
+        </div>
+        <div class="codo_topics_topic_foot codo_topics_topic_moderation clearfix">
+
+            <input type="checkbox">
+            <div data-what="{{what}}" data-tid="{{topic_id}}" data-pid="{{post_id}}" class="codo_topics_topic_moderation_action">
+                <button class="codo_btn codo_btn_primary codo_btn_approve">{{i18n "Approve"}}</button>
+                <button class="codo_btn codo_btn_danger codo_btn_delete">{{i18n "Delete"}}</button>
+            </div>
+        </div>
+    </article>
+    {{/each}}
+</div>
