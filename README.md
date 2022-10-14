@@ -10,7 +10,7 @@ https://github.com/WebCrew/WebCrew_codarko/discussions/2#discussion-4147962
 ***
 
 ## Theme View
-<a href="http://crazymates.de">
+<a href="http://net-twin.de">
     <img src="https://github.com/WebCrew/WebCrew_codarko/blob/master/thumbnail.png?raw=true" alt="Theme Screenshot"
          title="CODO Forum Codarko Theme - Standard View" align="left" />
 </a>
@@ -45,5 +45,5 @@ to for example your subfolder is called "board": /board/sites/default/themes/cod
 
 
 ### Author plus Team
-- Andreas Holzer - [https://crazymates.de/Crazymate](https://crazymates.de)
+- Andreas Holzer - [https://net-twin.de/WebCrew](https://net-twin.de)
 - CODOLOGIC Team - [https://codologic.com/](https://codologic.com/)
