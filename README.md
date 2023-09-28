@@ -10,10 +10,8 @@ https://github.com/WebCrew/WebCrew_codarko/discussions/2#discussion-4147962
 ***
 
 ## Theme View
-<a href="http://net-twin.de">
-    <img src="https://github.com/WebCrew/WebCrew_codarko/blob/master/thumbnail.png?raw=true" alt="Theme Screenshot"
+<img src="https://github.com/WebCrew/WebCrew_codarko/blob/master/thumbnail.png?raw=true" alt="Theme Screenshot"
          title="CODO Forum Codarko Theme - Standard View" align="left" />
-</a>
 
 ***
 
